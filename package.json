@@ -1,6 +1,6 @@
 {
   "name": "pegjs-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "PEG.js loader for webpack",
   "main": "index.js",
   "dependencies": {
