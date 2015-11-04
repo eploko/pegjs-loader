@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>pegjs-loader by eploko</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">pegjs-loader</h1>
+      <h2 class="project-tagline">PEG.js loader for webpack</h2>
+      <a href="https://github.com/eploko/pegjs-loader" class="btn">View on GitHub</a>
+      <a href="https://github.com/eploko/pegjs-loader/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/eploko/pegjs-loader/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="pegjs-loader-for-webpack" class="anchor" href="#pegjs-loader-for-webpack" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://github.com/pegjs/pegjs">PEG.js</a> loader for <a href="http://webpack.github.io/">webpack</a>
+</h1>
+
+<p><a href="https://travis-ci.org/eploko/pegjs-loader"><img src="https://img.shields.io/travis/eploko/pegjs-loader/master.svg?style=flat-square" alt="build status"></a>
+<a href="https://www.npmjs.com/package/pegjs-loader"><img src="https://img.shields.io/npm/v/pegjs-loader.svg?style=flat-square" alt="npm version"></a>
+<a href="https://www.npmjs.com/package/pegjs-loader"><img src="https://img.shields.io/npm/dm/pegjs-loader.svg?style=flat-square" alt="npm downloads"></a></p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<p><code>npm install --save-dev pegjs-loader pegjs webpack</code></p>
+
+<p>The pegjs-loader requires <a href="https://github.com/pegjs/pegjs">PEG.js</a> and <a href="https://github.com/webpack/webpack">webpack</a>
+as <a href="https://docs.npmjs.com/files/package.json#peerdependencies"><code>peerDependency</code></a>. Thus you are able to specify the required versions accurately.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p><a href="http://webpack.github.io/docs/using-loaders.html">Documentation: Using loaders</a></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">"</span>!pegjs!./parser.pegjs<span class="pl-pds">"</span></span>);
+<span class="pl-c">// =&gt; returns compiled PEG.js parser</span></pre></div>
+
+<h3>
+<a id="apply-via-webpack-config" class="anchor" href="#apply-via-webpack-config" aria-hidden="true"><span class="octicon octicon-link"></span></a>Apply via webpack config</h3>
+
+<p>It's recommended to adjust your <code>webpack.config</code> so <code>pegjs!</code> is applied automatically on all files ending on <code>.pegjs</code>:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">module</span>.exports <span class="pl-k">=</span> {
+  ...
+  module<span class="pl-k">:</span> {
+    loaders<span class="pl-k">:</span> [
+      {
+        test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>pegjs<span class="pl-k">$</span><span class="pl-pds">/</span></span>,
+        loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>pegjs-loader<span class="pl-pds">'</span></span>
+      }
+    ]
+  }
+};</pre></div>
+
+<p>Then you only need to write: <code>require("./parser.pegjs")</code>.</p>
+
+<h3>
+<a id="pegjs-options" class="anchor" href="#pegjs-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>PEG.js options</h3>
+
+<p>You can pass options to PEG.js as <a href="http://webpack.github.io/docs/using-loaders.html#query-parameters">query parameters</a>. The following options are supported:</p>
+
+<ul>
+<li>
+<code>cache</code> — if <code>true</code>, makes the parser cache results, avoiding exponential
+parsing time in pathological cases but making the parser slower (default:
+<code>false</code>)</li>
+</ul>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">module</span>.exports <span class="pl-k">=</span> {
+  ...
+  module<span class="pl-k">:</span> {
+    loaders<span class="pl-k">:</span> [
+      {
+        test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>pegjs<span class="pl-k">$</span><span class="pl-pds">/</span></span>,
+        loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>pegjs-loader?cache=true<span class="pl-pds">'</span></span>
+      }
+    ]
+  }
+};</pre></div>
+
+<h2>
+<a id="change-log" class="anchor" href="#change-log" aria-hidden="true"><span class="octicon octicon-link"></span></a>Change Log</h2>
+
+<p>This project adheres to <a href="http://semver.org/">Semantic Versioning</a>.<br>
+Every release, along with the migration instructions, if any, is documented on the Github <a href="https://github.com/eploko/pegjs-loader/releases">Releases</a> page.</p>
+
+<h2>
+<a id="thanks" class="anchor" href="#thanks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thanks</h2>
+
+<p><a href="https://github.com/victor-homyakov">Victor Homyakov</a> for the propagation of the cache option.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT (<a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a>)</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/eploko/pegjs-loader">pegjs-loader</a> is maintained by <a href="https://github.com/eploko">eploko</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-39470592-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
