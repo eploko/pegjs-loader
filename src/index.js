@@ -1,7 +1,7 @@
 import pegjs from 'pegjs';
 import loaderUtils from 'loader-utils';
 
-export default (source) => {
+export default function loader(source) {
   if (this.cacheable) {
     this.cacheable();
   }
@@ -13,4 +13,4 @@ export default (source) => {
   const pegOptions = { output: 'source', cache: cacheParserResults };
 
   return `module.exports = ${pegjs.buildParser(source, pegOptions)};`;
-};
+}
