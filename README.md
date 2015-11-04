@@ -67,6 +67,10 @@ module.exports = {
 This project adheres to [Semantic Versioning](http://semver.org/).  
 Every release, along with the migration instructions, if any, is documented on the Github [Releases](https://github.com/eploko/pegjs-loader/releases) page.
 
+## Thanks
+
+[Victor Homyakov](https://github.com/victor-homyakov) for the propagation of the cache option.
+
 ## License
 
 MIT (http://www.opensource.org/licenses/mit-license.php)
