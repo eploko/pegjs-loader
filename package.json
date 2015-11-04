@@ -12,7 +12,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/eploko/pegjs-loader"
-  },  
+  },
   "keywords": [
     "webpack",
     "pegjs",
@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/eploko/pegjs-loader/issues"
   },
-  "homepage": "http://eploko.github.io/pegjs-loader",  
+  "homepage": "http://eploko.github.io/pegjs-loader",
   "peerDependencies": {
     "pegjs": "^0.8.0",
     "webpack": "^1.12.2"
@@ -37,6 +37,7 @@
     "babel-eslint": "^4.1.0",
     "babel-loader": "^5.1.4",
     "eslint": "^1.7.1",
+    "eslint-config-airbnb": "^0.1.0",
     "rimraf": "^2.3.4",
     "webpack": "1.12.2"
   },
