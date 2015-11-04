@@ -1,5 +1,9 @@
 # [PEG.js](https://github.com/pegjs/pegjs) loader for [webpack](http://webpack.github.io/)
 
+[![build status](https://img.shields.io/travis/eploko/pegjs-loader/master.svg?style=flat-square)](https://travis-ci.org/eploko/pegjs-loader)
+[![npm version](https://img.shields.io/npm/v/pegjs-loader.svg?style=flat-square)](https://www.npmjs.com/package/pegjs-loader)
+[![npm downloads](https://img.shields.io/npm/dm/pegjs-loader.svg?style=flat-square)](https://www.npmjs.com/package/pegjs-loader)
+
 ## Install
 
 `npm install --save-dev pegjs-loader pegjs webpack`
