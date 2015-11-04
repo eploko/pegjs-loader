@@ -3,10 +3,6 @@
   "version": "0.1.1",
   "description": "PEG.js loader for webpack",
   "main": "index.js",
-  "dependencies": {
-    "loader-utils": "^0.2.2",
-    "pegjs": "^0.8.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/eploko/pegjs-loader"
@@ -19,5 +15,15 @@
     "loader"
   ],
   "author": "Andrey Subbotin",
-  "license": "MIT"
+  "license": "MIT",
+  "peerDependencies": {
+     "webpack": "^1.12.2"
+   },  
+   "dependencies": {
+     "loader-utils": "^0.2.5",
+     "pegjs": "^0.8.0"
+   },
+   "devDependencies": {
+     "webpack": "1.12.2"
+   }   
 }
