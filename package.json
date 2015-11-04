@@ -1,29 +1,29 @@
 {
-  "name": "pegjs-loader",
-  "version": "0.1.1",
-  "description": "PEG.js loader for webpack",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/eploko/pegjs-loader"
-  },
-  "keywords": [
-    "webpack",
-    "pegjs",
-    "peg.js",
-    "peg",
-    "loader"
-  ],
-  "author": "Andrey Subbotin",
-  "license": "MIT",
-  "peerDependencies": {
-     "webpack": "^1.12.2"
-   },  
-   "dependencies": {
-     "loader-utils": "^0.2.5",
-     "pegjs": "^0.8.0"
-   },
-   "devDependencies": {
-     "webpack": "1.12.2"
-   }   
+    "name": "pegjs-loader",
+    "version": "0.1.1",
+    "description": "PEG.js loader for webpack",
+    "author": "Andrey Subbotin",
+    "license": "MIT",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/eploko/pegjs-loader"
+    },
+    "keywords": [
+        "webpack",
+        "pegjs",
+        "peg.js",
+        "peg",
+        "loader"
+    ],
+    "peerDependencies": {
+        "pegjs": "^0.8.0",
+        "webpack": "^1.12.2"
+    },
+    "dependencies": {
+        "loader-utils": "^0.2.5"
+    },
+    "devDependencies": {
+        "webpack": "1.12.2"
+    }
 }
