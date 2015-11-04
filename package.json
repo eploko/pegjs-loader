@@ -38,6 +38,7 @@
     "babel-loader": "^5.1.4",
     "eslint": "^1.7.1",
     "eslint-config-airbnb": "^0.1.0",
+    "eslint-plugin-react": "^3.6.3",
     "rimraf": "^2.3.4",
     "webpack": "1.12.2"
   },
