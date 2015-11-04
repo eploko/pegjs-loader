@@ -7,11 +7,12 @@
     "Victor Homyakov (https://github.com/victor-homyakov)"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/eploko/pegjs-loader"
-  },
+  },  
   "keywords": [
     "webpack",
     "pegjs",
@@ -19,6 +20,10 @@
     "peg",
     "loader"
   ],
+  "bugs": {
+    "url": "https://github.com/eploko/pegjs-loader/issues"
+  },
+  "homepage": "http://eploko.github.io/pegjs-loader",  
   "peerDependencies": {
     "pegjs": "^0.8.0",
     "webpack": "^1.12.2"
@@ -27,6 +32,23 @@
     "loader-utils": "^0.2.5"
   },
   "devDependencies": {
+    "babel": "^5.5.8",
+    "babel-core": "^5.6.18",
+    "babel-eslint": "^4.1.0",
+    "babel-loader": "^5.1.4",
+    "eslint": "^1.7.1",
+    "rimraf": "^2.3.4",
     "webpack": "1.12.2"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "lint": "eslint src",
+    "check": "npm run lint",
+    "build:lib": "babel src --out-dir lib",
+    "build": "npm run build:lib",
+    "preversion": "npm run clean && npm run check",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags && npm run clean",
+    "prepublish": "npm run clean && npm run build"
   }
 }
