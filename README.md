@@ -47,7 +47,10 @@ You can pass options to PEG.js as [query parameters](http://webpack.github.io/do
   * `cache` — if `true`, makes the parser cache results, avoiding exponential
     parsing time in pathological cases but making the parser slower (default:
     `false`)
-    
+
+  * `optimize` - whether to optimize the built parser either for `speed` or
+    `size` (default: `speed`)
+
 ``` js
 module.exports = {
   ...
@@ -55,7 +58,7 @@ module.exports = {
     loaders: [
       {
         test: /\.pegjs$/,
-        loader: 'pegjs-loader?cache=true'
+        loader: 'pegjs-loader?cache=true&optimize=size'
       }
     ]
   }
