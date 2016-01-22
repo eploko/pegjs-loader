@@ -14,7 +14,7 @@ export default function loader(source) {
   const pegOptions = {
     output: 'source',
     cache: cacheParserResults,
-    optimize: optimizeParser
+    optimize: optimizeParser,
   };
 
   return `module.exports = ${pegjs.buildParser(source, pegOptions)};`;
