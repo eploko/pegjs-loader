@@ -72,7 +72,8 @@ Every release, along with the migration instructions, if any, is documented on t
 
 ## Thanks
 
-[Victor Homyakov](https://github.com/victor-homyakov) for the propagation of the cache option.
+[Victor Homyakov](https://github.com/victor-homyakov) for the propagation of the `cache` option.
+[VladimirTechMan](https://github.com/VladimirTechMan) for the propagation of the `optimize` option.
 
 ## License
 
