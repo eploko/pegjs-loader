@@ -22,7 +22,7 @@ var parser = require("!pegjs!./parser.pegjs");
 
 ### Apply via webpack config
 
-It's recommended to adjust your `webpack.config` so `pegjs!` is applied automatically on all files ending on `.pegjs`:
+It's recommended to adjust your `webpack.config` so `pegjs!` is applied automatically on all files ending with `.pegjs`:
 
 ``` js
 module.exports = {
