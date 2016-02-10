@@ -51,6 +51,12 @@ You can pass options to PEG.js as [query parameters](http://webpack.github.io/do
   * `optimize` - whether to optimize the built parser either for `speed` or
     `size` (default: `speed`)
 
+  * `allowedStartRules` - The rules the built parser will be allowed to start
+    parsing from (default: the first rule in the grammar).
+
+  * `trace` - if `true`, the tracing support in the built parser is enabled
+    (default: `false`)
+
 ``` js
 module.exports = {
   ...
@@ -58,7 +64,7 @@ module.exports = {
     loaders: [
       {
         test: /\.pegjs$/,
-        loader: 'pegjs-loader?cache=true&optimize=size'
+        loader: 'pegjs-loader?cache=true&optimize=size&allowedStartRules[]=RuleA,allowedStartRules[]=RuleB&trace=false'
       }
     ]
   }
