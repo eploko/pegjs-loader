@@ -25,7 +25,7 @@
   },
   "homepage": "http://eploko.github.io/pegjs-loader",
   "peerDependencies": {
-    "pegjs": "^0.9.0",
+    "pegjs": "^0.10.0",
     "webpack": "^1.12.2"
   },
   "dependencies": {
