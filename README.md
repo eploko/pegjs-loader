@@ -79,7 +79,7 @@ Every release, along with the migration instructions, if any, is documented on t
 ## Thanks
 
 * [Victor Homyakov](https://github.com/victor-homyakov) for the propagation of the `cache` option.
-* [VladimirTechMan](https://github.com/VladimirTechMan) for the propagation of the `optimize` option.
+* [VladimirTechMan](https://github.com/VladimirTechMan) for the propagation of the `optimize` option and updating things to be compatible with PEG.js 0.10.0.
 * [ragtime](https://github.com/ragtime) for the propagation of the `allowedStartRules` and `trace` options.
 
 ## License
