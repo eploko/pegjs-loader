@@ -31,5 +31,6 @@ export default function loader(source) {
     pegOptions.allowedStartRules = allowedStartRules;
   }
 
-  return `module.exports = ${pegjs.buildParser(source, pegOptions)};`;
+  const methodName = (typeof pegjs.generate === 'function') ? 'generate' : 'buildParser';
+  return `module.exports = ${pegjs[methodName](source, pegOptions)};`;
 }
