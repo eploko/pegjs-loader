@@ -26,11 +26,12 @@ export default function loader(source) {
     cache: cacheParserResults,
     optimize: optimizeParser,
     trace: trace,
+    format: 'commonjs',
   };
   if (allowedStartRules.length > 0) {
     pegOptions.allowedStartRules = allowedStartRules;
   }
 
   const methodName = (typeof pegjs.generate === 'function') ? 'generate' : 'buildParser';
-  return `module.exports = ${pegjs[methodName](source, pegOptions)};`;
+  return pegjs[methodName](source, pegOptions);
 }
