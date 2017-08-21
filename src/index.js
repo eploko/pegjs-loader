@@ -10,7 +10,7 @@ export default function loader(source) {
   const cacheParserResults = !!query.cache;
   const optimizeParser = query.optimize || 'speed';
   const trace = !!query.trace;
-  const dependencies = JSON.parse(query.dependencies || '{}')
+  const dependencies = JSON.parse(query.dependencies || '{}');
 
   let allowedStartRules;
   if (typeof query.allowedStartRules === 'string') {
