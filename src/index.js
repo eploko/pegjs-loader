@@ -23,16 +23,17 @@ export default function loader(source) {
 
   // Description of PEG.js options: https://github.com/pegjs/pegjs#javascript-api
   const pegOptions = {
-    output: 'source',
     cache: cacheParserResults,
-    optimize: optimizeParser,
-    trace: trace,
     dependencies: dependencies,
+    format: 'commonjs',
+    optimize: optimizeParser,
+    output: 'source',
+    trace: trace,
   };
   if (allowedStartRules.length > 0) {
     pegOptions.allowedStartRules = allowedStartRules;
   }
 
   const methodName = (typeof pegjs.generate === 'function') ? 'generate' : 'buildParser';
-  return `module.exports = ${pegjs[methodName](source, pegOptions)};`;
+  return pegjs[methodName](source, pegOptions);
 }
