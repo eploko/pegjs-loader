@@ -10,6 +10,7 @@ export default function loader(source) {
   const cacheParserResults = !!query.cache;
   const optimizeParser = query.optimize || 'speed';
   const trace = !!query.trace;
+  const dependencies = JSON.parse(query.dependencies || '{}');
 
   let allowedStartRules;
   if (typeof query.allowedStartRules === 'string') {
@@ -22,9 +23,11 @@ export default function loader(source) {
 
   // Description of PEG.js options: https://github.com/pegjs/pegjs#javascript-api
   const pegOptions = {
-    output: 'source',
     cache: cacheParserResults,
+    dependencies: dependencies,
+    format: 'commonjs',
     optimize: optimizeParser,
+    output: 'source',
     trace: trace,
   };
   if (allowedStartRules.length > 0) {
@@ -32,5 +35,5 @@ export default function loader(source) {
   }
 
   const methodName = (typeof pegjs.generate === 'function') ? 'generate' : 'buildParser';
-  return `module.exports = ${pegjs[methodName](source, pegOptions)};`;
+  return pegjs[methodName](source, pegOptions);
 }
