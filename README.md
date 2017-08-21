@@ -44,15 +44,18 @@ Then you only need to write: `require("./parser.pegjs")`.
 
 You can pass options to PEG.js as [query parameters](http://webpack.github.io/docs/using-loaders.html#query-parameters). The following options are supported:
 
+  * `allowedStartRules` - The rules the built parser will be allowed to start
+    parsing from (default: the first rule in the grammar).
+
   * `cache` — If `true`, makes the parser cache results, avoiding exponential
     parsing time in pathological cases but making the parser slower (default:
     `false`).
 
+  * `dependencies` - Parser dependencies, the value is an object which maps variables used to access the
+    dependencies in the parser to module IDs used to load them (default: `{}`).
+
   * `optimize` - Whether to optimize the built parser either for `speed` or
     `size` (default: `speed`).
-
-  * `allowedStartRules` - The rules the built parser will be allowed to start
-    parsing from (default: the first rule in the grammar).
 
   * `trace` - If `true`, the tracing support in the built parser is enabled
     (default: `false`).
@@ -82,6 +85,7 @@ Every release, along with the migration instructions, if any, is documented on t
 * [VladimirTechMan](https://github.com/VladimirTechMan) for the propagation of the `optimize` option and updating things to be compatible with PEG.js 0.10.0.
 * [ragtime](https://github.com/ragtime) for the propagation of the `allowedStartRules` and `trace` options.
 * [Jan Varwig](https://github.com/janv) for the Webpack 2 compatibility fix.
+* [retorquere](https://github.com/retorquere) for the propagation of the `dependencies` option.
 
 ## License
 
