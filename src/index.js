@@ -10,6 +10,7 @@ export default function loader(source) {
   const cacheParserResults = !!query.cache;
   const optimizeParser = query.optimize || 'speed';
   const trace = !!query.trace;
+  const dependencies = JSON.parse(query.dependencies || '{}')
 
   let allowedStartRules;
   if (typeof query.allowedStartRules === 'string') {
@@ -26,6 +27,7 @@ export default function loader(source) {
     cache: cacheParserResults,
     optimize: optimizeParser,
     trace: trace,
+    dependencies: dependencies,
   };
   if (allowedStartRules.length > 0) {
     pegOptions.allowedStartRules = allowedStartRules;
