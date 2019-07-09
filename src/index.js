@@ -1,6 +1,16 @@
 import pegjs from 'pegjs';
 import loaderUtils from 'loader-utils';
 
+function extractAllowedStartRules(query) {
+  if (typeof query.allowedStartRules === 'string') {
+    return [query.allowedStartRules];
+  }
+  if (Array.isArray(query.allowedStartRules)) {
+    return query.allowedStartRules;
+  }
+  return [];
+}
+
 export default function loader(source) {
   if (this.cacheable) {
     this.cacheable();
@@ -11,24 +21,16 @@ export default function loader(source) {
   const optimizeParser = query.optimize || 'speed';
   const trace = !!query.trace;
   const dependencies = JSON.parse(query.dependencies || '{}');
-
-  let allowedStartRules;
-  if (typeof query.allowedStartRules === 'string') {
-    allowedStartRules = [ query.allowedStartRules ];
-  } else if (Array.isArray(query.allowedStartRules)) {
-    allowedStartRules = query.allowedStartRules;
-  } else {
-    allowedStartRules = [];
-  }
+  const allowedStartRules = extractAllowedStartRules(query);
 
   // Description of PEG.js options: https://github.com/pegjs/pegjs#javascript-api
   const pegOptions = {
     cache: cacheParserResults,
-    dependencies: dependencies,
+    dependencies,
     format: 'commonjs',
     optimize: optimizeParser,
     output: 'source',
-    trace: trace,
+    trace,
   };
   if (allowedStartRules.length > 0) {
     pegOptions.allowedStartRules = allowedStartRules;
