@@ -10,8 +10,5 @@
         "es6": true,
         "browser": false
     },
-    "extends": "airbnb",
-    "ecmaFeatures": {
-        "experimentalObjectRestSpread": true
-    }
+    "extends": "airbnb"
 }
