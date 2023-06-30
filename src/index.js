@@ -16,7 +16,7 @@ export default function loader(source) {
     this.cacheable();
   }
 
-  const query = loaderUtils.parseQuery(this.query);
+  const query = this.query ? loaderUtils.parseQuery(this.query) : {};
   const cacheParserResults = !!query.cache;
   const optimizeParser = query.optimize || 'speed';
   const trace = !!query.trace;

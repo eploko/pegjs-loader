@@ -1,6 +1,6 @@
 {
     "name": "pegjs-loader",
-    "version": "0.5.6",
+    "version": "0.5.7",
     "description": "PEG.js loader for webpack",
     "authors": [
         "Andrey Subbotin <andrey@subbotin.me> (https://github.com/eploko)",
@@ -11,7 +11,7 @@
     "jsnext:main": "src/index.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/eploko/pegjs-loader"
+        "url": "https://github.com/talon-one/pegjs-loader"
     },
     "keywords": [
         "webpack",
@@ -21,15 +21,14 @@
         "loader"
     ],
     "bugs": {
-        "url": "https://github.com/eploko/pegjs-loader/issues"
+        "url": "https://github.com/eploko/talon-one/issues"
     },
-    "homepage": "http://eploko.github.io/pegjs-loader",
     "peerDependencies": {
         "pegjs": "^0.10.0",
         "webpack": ">=1"
     },
     "dependencies": {
-        "loader-utils": "^0.2.5"
+        "loader-utils": "^1.4.2"
     },
     "devDependencies": {
         "babel": "^5.5.8",
