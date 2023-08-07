@@ -29,7 +29,7 @@
         "webpack": ">=1"
     },
     "dependencies": {
-        "loader-utils": "^1.4.1"
+        "loader-utils": "^1.4.2"
     },
     "devDependencies": {
         "babel": "^5.5.8",
