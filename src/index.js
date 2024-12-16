@@ -16,12 +16,15 @@ export default function loader(source) {
     this.cacheable();
   }
 
-  const query = loaderUtils.parseQuery(this.query);
-  const cacheParserResults = !!query.cache;
-  const optimizeParser = query.optimize || 'speed';
-  const trace = !!query.trace;
-  const dependencies = JSON.parse(query.dependencies || '{}');
-  const allowedStartRules = extractAllowedStartRules(query);
+  const options =
+    this.query && this.query.startsWith && this.query.startsWith("?")
+      ? loaderUtils.parseQuery(this.query)
+      : loaderUtils.getOptions(this) || {};
+  const cacheParserResults = !!options.cache;
+  const optimizeParser = options.optimize || 'speed';
+  const trace = !!options.trace;
+  const dependencies = JSON.parse(options.dependencies || '{}');
+  const allowedStartRules = extractAllowedStartRules(options);
 
   // Description of PEG.js options: https://github.com/pegjs/pegjs#javascript-api
   const pegOptions = {
